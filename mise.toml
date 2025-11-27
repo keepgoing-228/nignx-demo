@@ -1,0 +1,10 @@
+[tasks.run-nginx]
+run = [
+    """
+    docker run -d \
+	  --name my-nginx \
+	  -p 8080:80 \
+	  -v $(pwd)/html:/usr/share/nginx/html \
+	  nginx:alpine
+    """
+]
