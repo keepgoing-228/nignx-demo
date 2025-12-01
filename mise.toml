@@ -15,3 +15,12 @@ run = [
 
 [tasks.rm-nginx]
 run = "docker rm -f ${CONTAINER_NAME}"
+
+[tasks.whoami]
+run = "docker compose -f docker/whoami.yml up -d"
+
+[tasks.multiwhoami]
+run = "docker compose -f docker/whoami.yml up -d --scale app=3"
+
+[tasks.down-whoami]
+run = "docker compose -f docker/whoami.yml down"
